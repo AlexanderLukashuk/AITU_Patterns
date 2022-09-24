@@ -1,5 +1,6 @@
+import Entities.Item;
+
 import java.util.ArrayList;
-import java.util.Collection;
 import java.util.Scanner;
 
 public class Program {
@@ -36,7 +37,7 @@ public class Program {
 
         for (int i = 0; i < collections.size(); i++) {
             if (i + 1 == menu) {
-//                ArrayList<Item> temp = new ArrayList<>();
+//                ArrayList<Entities.Item> temp = new ArrayList<>();
 //                MyCollection temp = collections.get(i);
 //                for (int j = 0; j < temp.GetSize(); i++) {
 //                    System.out.println(temp.collection.get(j).Name);

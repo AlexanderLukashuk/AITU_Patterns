@@ -1,12 +1,13 @@
+import Entities.Item;
 import Interfaces.IObservable;
 import Interfaces.IObserver;
-import Interfaces.ISubject;
+import Interfaces.MyCollectionInterfaces.Buy;
 
 import java.util.ArrayList;
 import java.util.List;
 
 //public class MyCollection implements ISubject {
-public class MyCollection implements IObservable {
+public class MyCollection extends Buy implements IObservable {
     public ArrayList<Item> collection;
 //    private List<IObserver> observers;
 //    private String message;
