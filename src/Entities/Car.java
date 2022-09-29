@@ -1,0 +1,28 @@
+package Entities;
+
+public class Car extends Item {
+    public String Model;
+    public String CarType;
+
+    public Car() {}
+
+    public Car(String name, int price) {
+        super(name, price);
+    }
+
+    public void SetCarModel(String model) {
+        Model = model;
+    }
+
+    public String GetCarModel() {
+        return Model;
+    }
+
+    public void SetCarType(String type) {
+        CarType = type;
+    }
+
+    public String GetCarType() {
+        return CarType;
+    }
+}
