@@ -7,7 +7,7 @@ public class CarDecorator implements ICar {
 
     protected ICar Car;
 
-    public CarDecorator(Car car) {
+    public CarDecorator(ICar car) {
         Car = car;
     }
 
