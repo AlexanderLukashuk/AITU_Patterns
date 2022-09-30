@@ -1,6 +1,8 @@
 package Entities;
 
-public class Car extends Item {
+import Interfaces.ICar;
+
+public class Car extends Item implements ICar {
     public String Model;
     public String CarType;
 
@@ -24,5 +26,10 @@ public class Car extends Item {
 
     public String GetCarType() {
         return CarType;
+    }
+
+    @Override
+    public void Assemble() {
+        System.out.println("Basic car");
     }
 }

@@ -112,6 +112,8 @@ public class Program {
                         ex.printStackTrace();
                     }
                     System.out.println("Collection successfully removed");
+                    break;
+                case 4:
             }
         }
 //
@@ -163,14 +165,16 @@ public class Program {
         IObserver obj3 = (IObserver) new MyCollectionSubsciber("Obj3");
 
         collecction.Register((IObserver) obj1);
-        collecction.Register((IObserver) obj2);
+//        collecction.Register((IObserver) obj2);
         collecction.Register((IObserver) obj3);
 
         obj1.SetSubject((collecction));
-        obj2.SetSubject((collecction));
+//        obj2.SetSubject((collecction));
         obj3.SetSubject((collecction));
 
         obj1.Update();
+//        obj2.Update();
+        obj3.Update();
 
         Item warcraft = new Item();
         warcraft.SetPrice(500);

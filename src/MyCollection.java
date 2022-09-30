@@ -1,3 +1,4 @@
+import Entities.CollectionTypes;
 import Entities.Item;
 import Interfaces.MyCollectionInterfaces.Buy;
 import Observer.Interfaces.IObserver;
@@ -20,6 +21,7 @@ public class MyCollection extends Buy implements ISubject {
     }
 
     public ArrayList<Item> collection;
+    public CollectionTypes type;
 //    private List<IObserver> observers;
 //    private String message;
 //    private boolean changed;
