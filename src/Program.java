@@ -1,4 +1,5 @@
 import Entities.*;
+import Interfaces.ICar;
 import Observer.Interfaces.IObserver;
 import Observer.MyCollectionSubsciber;
 
@@ -182,6 +183,14 @@ public class Program {
         collecction.collection.add(warcraft);
 
         collecction.PostMessage("New message");
+
+        ICar sportCar = new SportCar(new Car("Sport", 200));
+        sportCar.Assemble();
+
+        ICar sportsLuxuryCar = new SportCar(new LuxuryCar(new Car()));
+        sportsLuxuryCar.Assemble();
+        Car car = new Car("Aboba", 100);
+        System.out.println(sportCar.GetCarName());
 
 
     }

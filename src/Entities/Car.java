@@ -32,4 +32,10 @@ public class Car extends Item implements ICar {
     public void Assemble() {
         System.out.println("Basic car");
     }
+
+    @Override
+    public String GetCarName() {
+//        return this.Name;
+        return GetName();
+    }
 }

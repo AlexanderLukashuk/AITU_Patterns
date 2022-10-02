@@ -5,6 +5,10 @@ import Interfaces.ICar;
 
 public class SportCar extends CarDecorator {
 
+//    public SportCar(ICar car) {
+//        super(car);
+//    }
+
     public SportCar(ICar car) {
         super(car);
     }

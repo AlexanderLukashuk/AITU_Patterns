@@ -5,6 +5,9 @@ import Interfaces.ICar;
 
 public class LuxuryCar extends CarDecorator {
 
+//    public LuxuryCar(ICar car) {
+//        super(car);
+//    }
     public LuxuryCar(ICar car) {
         super(car);
     }
