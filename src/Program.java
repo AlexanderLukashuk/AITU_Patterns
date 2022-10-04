@@ -83,6 +83,44 @@ public class Program {
                                 all_collections.get(all_collections.size() + 1).collection.add(new Book(temp_item_name, temp_item_price));
                                 break;
                             case 3:
+                                int carType = 0;
+
+                                while (true) {
+                                    System.out.println("Choose car type:");
+                                    System.out.println("1) Basic car");
+                                    System.out.println("2) Luxury car");
+                                    System.out.println("3) Sport car");
+                                    System.out.println("4) Luxury Sport car");
+                                    System.out.print("Your choice: ");
+                                    carType = input.nextInt();
+
+                                    if (carType > 0 && carType < 4) {
+                                        break;
+                                    } else {
+                                        System.out.println("Error, something went wrong");
+                                        System.out.println("Please try again");
+                                    }
+                                }
+                                
+                                switch (carType) {
+                                    case 1:
+                                        all_collections.get(all_collections.size() + 1).collection.add(new Car(temp_item_name, temp_item_price));
+                                        break;
+                                    case 2:
+                                        ICar luxuryCar = new LuxuryCar(new Car(temp_item_name, temp_item_price));
+                                        all_collections.get(all_collections.size() + 1).collection.add((Item) luxuryCar);
+                                        break;
+                                    case 3:
+                                        ICar sportCar = new SportCar(new Car(temp_item_name, temp_item_price));
+                                        all_collections.get(all_collections.size() + 1).collection.add((Item) sportCar);
+                                        break;
+                                    case 4:
+                                        ICar sportLuxuryCar = new SportCar(new LuxuryCar(new Car(temp_item_name, temp_item_price)));
+                                        all_collections.get(all_collections.size() + 1).collection.add((Item) sportLuxuryCar);
+                                        break;
+                                }
+
+
                                 all_collections.get(all_collections.size() + 1).collection.add(new Game(temp_item_name, temp_item_price));
                                 break;
                             case 4:
