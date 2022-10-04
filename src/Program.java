@@ -1,5 +1,6 @@
 import Entities.*;
 import Interfaces.ICar;
+import Interfaces.IGame;
 import Observer.Interfaces.IObserver;
 import Observer.MyCollectionSubsciber;
 
@@ -83,7 +84,34 @@ public class Program {
                                 all_collections.get(all_collections.size() + 1).collection.add(new Book(temp_item_name, temp_item_price));
                                 break;
                             case 3:
-                                all_collections.get(all_collections.size() + 1).collection.add(new Game(temp_item_name, temp_item_price));
+                                int gameType = 0;
+
+                                while (true) {
+                                    System.out.println("Choose game type: ");
+                                    System.out.println("1) Basic Game");
+                                    System.out.println("2) Game DLC");
+                                    System.out.print("Your choice: ");
+                                    gameType = input.nextInt();
+
+                                    if (gameType > 0 && gameType < 3) {
+                                        break;
+                                    } else {
+                                        System.out.println("Error, something went wrong");
+                                        System.out.println("Please try again");
+                                    }
+                                }
+
+                                switch (gameType) {
+                                    case 1:
+                                        all_collections.get(all_collections.size() + 1).collection.add(new Game(temp_item_name, temp_item_price));
+                                        break;
+                                    case 2:
+                                        IGame dlcGame = new GameDLC(new Game(temp_item_name, temp_item_price));
+                                        all_collections.get(all_collections.size() + 1).collection.add((Item) dlcGame);
+                                        break;
+                                }
+
+//                                all_collections.get(all_collections.size() + 1).collection.add(new Game(temp_item_name, temp_item_price));
                                 break;
                             case 4:
                                 int carType = 0;
