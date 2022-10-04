@@ -115,6 +115,52 @@ public class Program {
                     System.out.println("Collection successfully removed");
                     break;
                 case 4:
+                    int collection_number = 0;
+                    while (collection_number == 0) {
+                        System.out.println("Choose collection: ");
+                        for (int i = 0; i < all_collections.size(); i++) {
+                            System.out.println((i + 1) + ") " + all_collections.get(i));
+                        }
+                        collection_number = input.nextInt();
+
+                        if (collection_number == 0 || collection_number > all_collections.size()) {
+                            System.out.println("Error. Please, try again");
+                        }
+                    }
+
+                    temp_item_name = null;
+
+                    System.out.print("Enter item's name: ");
+                    temp_item_name = input.nextLine();
+
+                    if (temp_item_name == null) {
+                        temp_item_name = "No Name";
+                    }
+
+                    System.out.print("Enter item's price: ");
+                    temp_item_price = input.nextInt();
+
+                    String className = all_collections.get(collection_number - 1).getClass().getSimpleName();
+
+                    switch (className) {
+                        case "Item":
+                            all_collections.get(collection_number - 1).collection.add(new Item(temp_item_name, temp_item_price));
+                            break;
+                        case "Book":
+                            all_collections.get(collection_number - 1).collection.add(new Book(temp_item_name, temp_item_price));
+                            break;
+                        case "Game":
+                            all_collections.get(collection_number - 1).collection.add(new Game(temp_item_name, temp_item_price));
+                            break;
+                        case "Car":
+                            all_collections.get(collection_number - 1).collection.add(new Car(temp_item_name, temp_item_price));
+                            break;
+                        case "Painting":
+                            all_collections.get(collection_number - 1).collection.add(new Painting(temp_item_name, temp_item_price));
+                            break;
+                    }
+
+
             }
         }
 //
@@ -191,6 +237,16 @@ public class Program {
         sportsLuxuryCar.Assemble();
         Car car = new Car("Aboba", 100);
         System.out.println(sportCar.GetCarName());
+        System.out.println(sportCar.getClass());
+        System.out.println(sportCar.toString());
+
+        String fullClassName = String.valueOf(sportCar.getClass());
+        String simpleClassName = fullClassName.substring(fullClassName.lastIndexOf('.'));
+        System.out.println(simpleClassName);
+        System.out.println(fullClassName);
+
+
+        System.out.println(sportCar.getClass().getSimpleName());
 
 
     }
