@@ -83,6 +83,9 @@ public class Program {
                                 all_collections.get(all_collections.size() + 1).collection.add(new Book(temp_item_name, temp_item_price));
                                 break;
                             case 3:
+                                all_collections.get(all_collections.size() + 1).collection.add(new Game(temp_item_name, temp_item_price));
+                                break;
+                            case 4:
                                 int carType = 0;
 
                                 while (true) {
@@ -101,7 +104,7 @@ public class Program {
                                         System.out.println("Please try again");
                                     }
                                 }
-                                
+
                                 switch (carType) {
                                     case 1:
                                         all_collections.get(all_collections.size() + 1).collection.add(new Car(temp_item_name, temp_item_price));
@@ -120,11 +123,7 @@ public class Program {
                                         break;
                                 }
 
-
-                                all_collections.get(all_collections.size() + 1).collection.add(new Game(temp_item_name, temp_item_price));
-                                break;
-                            case 4:
-                                all_collections.get(all_collections.size() + 1).collection.add(new Car(temp_item_name, temp_item_price));
+//                                all_collections.get(all_collections.size() + 1).collection.add(new Car(temp_item_name, temp_item_price));
                                 break;
                             case 5:
                                 all_collections.get(all_collections.size() + 1).collection.add(new Painting(temp_item_name, temp_item_price));
