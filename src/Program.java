@@ -49,7 +49,8 @@ public class Program {
 
 
                     System.out.print("Enter collection name: ");
-                    collection_name = input.nextLine();
+//                    collection_name = input.nextLine();
+                    collection_name = input.next();
 
                     if (collection_name == null) {
                         collection_name = "No name";
@@ -65,9 +66,10 @@ public class Program {
                     String temp_item_name = null;
                     int temp_item_price = 0;
 
-                    for (int i = 0; i < temp_collection_length; i++) {
+                    for (int i = 0; i < temp_collection_length - 1; i++) {
                         System.out.print("Enter item's name: ");
-                        temp_item_name = input.nextLine();
+//                        temp_item_name = input.nextLine();
+                        temp_item_name = input.next();
 
                         if (temp_item_name == null) {
                             temp_item_name = "No name";
@@ -135,19 +137,20 @@ public class Program {
 
                                 switch (carType) {
                                     case 1:
-                                        all_collections.get(all_collections.size() + 1).collection.add(new Car(temp_item_name, temp_item_price));
+                                        all_collections.get(all_collections.size() - 1).collection.add(new BasicCar(temp_item_name, temp_item_price));
                                         break;
                                     case 2:
-                                        ICar luxuryCar = new LuxuryCar(new Car(temp_item_name, temp_item_price));
-                                        all_collections.get(all_collections.size() + 1).collection.add((Item) luxuryCar);
+                                        Car car = new BasicCar(temp_item_name, temp_item_price);
+                                        Car luxuryCar = new LuxuryCar(car);
+                                        all_collections.get(all_collections.size() - 1).collection.add(luxuryCar);
                                         break;
                                     case 3:
-                                        ICar sportCar = new SportCar(new Car(temp_item_name, temp_item_price));
-                                        all_collections.get(all_collections.size() + 1).collection.add((Item) sportCar);
+//                                        Car sportCar = new SportCar(new Car(temp_item_name, temp_item_price));
+                                        all_collections.get(all_collections.size() - 1).collection.add(new SportCar(new BasicCar(temp_item_name, temp_item_price)));
                                         break;
                                     case 4:
-                                        ICar sportLuxuryCar = new SportCar(new LuxuryCar(new Car(temp_item_name, temp_item_price)));
-                                        all_collections.get(all_collections.size() + 1).collection.add((Item) sportLuxuryCar);
+//                                        ICar sportLuxuryCar = new SportCar(new LuxuryCar(new Car(temp_item_name, temp_item_price)));
+                                        all_collections.get(all_collections.size() + 1).collection.add(new LuxuryCar(new SportCar(new BasicCar(temp_item_name, temp_item_price))));
                                         break;
                                 }
 
@@ -218,7 +221,7 @@ public class Program {
                             all_collections.get(collection_number - 1).collection.add(new Game(temp_item_name, temp_item_price));
                             break;
                         case "Car":
-                            all_collections.get(collection_number - 1).collection.add(new Car(temp_item_name, temp_item_price));
+                            all_collections.get(collection_number - 1).collection.add(new BasicCar(temp_item_name, temp_item_price));
                             break;
                         case "Painting":
                             all_collections.get(collection_number - 1).collection.add(new Painting(temp_item_name, temp_item_price));
@@ -295,23 +298,23 @@ public class Program {
 
         collecction.PostMessage("New message");
 
-        ICar sportCar = new SportCar(new Car("Sport", 200));
-        sportCar.Assemble();
+//        ICar sportCar = new SportCar(new Car("Sport", 200));
+//        sportCar.Assemble();
 
-        ICar sportsLuxuryCar = new SportCar(new LuxuryCar(new Car()));
-        sportsLuxuryCar.Assemble();
-        Car car = new Car("Aboba", 100);
-        System.out.println(sportCar.GetCarName());
-        System.out.println(sportCar.getClass());
-        System.out.println(sportCar.toString());
+//        ICar sportsLuxuryCar = new SportCar(new LuxuryCar(new Car()));
+//        sportsLuxuryCar.Assemble();
+//        Car car = new Car("Aboba", 100);
+//        System.out.println(sportCar.GetCarName());
+//        System.out.println(sportCar.getClass());
+//        System.out.println(sportCar.toString());
 
-        String fullClassName = String.valueOf(sportCar.getClass());
-        String simpleClassName = fullClassName.substring(fullClassName.lastIndexOf('.'));
-        System.out.println(simpleClassName);
-        System.out.println(fullClassName);
+//        String fullClassName = String.valueOf(sportCar.getClass());
+//        String simpleClassName = fullClassName.substring(fullClassName.lastIndexOf('.'));
+//        System.out.println(simpleClassName);
+//        System.out.println(fullClassName);
 
 
-        System.out.println(sportCar.getClass().getSimpleName());
+//        System.out.println(sportCar.getClass().getSimpleName());
 
 
     }

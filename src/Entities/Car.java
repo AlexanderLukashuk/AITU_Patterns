@@ -2,7 +2,7 @@ package Entities;
 
 import Interfaces.ICar;
 
-public class Car extends Item implements ICar {
+public abstract class Car extends Item implements ICar {
     public String Model;
     public String CarType;
 
@@ -10,6 +10,10 @@ public class Car extends Item implements ICar {
 
     public Car(String name, int price) {
         super(name, price);
+    }
+
+    public Car(Car car) {
+        super(car.Name, car.Price);
     }
 
     public void SetCarModel(String model) {
@@ -32,6 +36,8 @@ public class Car extends Item implements ICar {
     public void Assemble() {
         System.out.println("Basic car");
     }
+
+    public abstract int GetCost();
 
     @Override
     public String GetCarName() {

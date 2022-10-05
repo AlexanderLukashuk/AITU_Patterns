@@ -3,7 +3,8 @@ package Decorator;
 import Entities.Car;
 import Interfaces.ICar;
 
-public class CarDecorator implements ICar {
+//public class CarDecorator implements ICar {
+public abstract class CarDecorator extends Car {
 
 //    protected ICar Car;
     protected ICar MyCar;
@@ -11,9 +12,15 @@ public class CarDecorator implements ICar {
 //    public CarDecorator(ICar car) {
 //        Car = car;
 //    }
-    public CarDecorator(ICar car) {
-        MyCar = car;
-}
+//    public CarDecorator(Car car) {
+//        MyCar = car;
+//    }
+
+    public CarDecorator(Car car) {
+        super(car);
+    }
+
+    public abstract int GetCost();
 
     @Override
     public void Assemble() {

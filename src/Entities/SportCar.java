@@ -5,17 +5,30 @@ import Interfaces.ICar;
 
 public class SportCar extends CarDecorator {
 
-//    public SportCar(ICar car) {
-//        super(car);
-//    }
+    private Car car;
 
-    public SportCar(ICar car) {
+    public SportCar(Car car) {
         super(car);
     }
 
+
     @Override
-    public void Assemble() {
-        super.Assemble();
-        System.out.println(" Adding features of Sport Car ");
+    public int GetCost() {
+        return car.GetCost() + 1000;
     }
+
+    //
+////    public SportCar(ICar car) {
+////        super(car);
+////    }
+//
+//    public SportCar(ICar car) {
+//        super(car);
+//    }
+//
+//    @Override
+//    public void Assemble() {
+//        super.Assemble();
+//        System.out.println(" Adding features of Sport Car ");
+//    }
 }
