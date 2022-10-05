@@ -13,20 +13,21 @@ public class Program {
     public static void main(String[] args) {
 
         Scanner input = new Scanner(System.in);
-        int menu = 0;
+        int menu = -1;
         String collection_name = null;
         List<MyCollection> all_collections = new ArrayList<>();
         CollectionTypes collection_type = new CollectionTypes();
         int typeChoice = 0;
         MyCollection temp_collection = new MyCollection();
 
-        while (menu != 5) {
+        while (menu != 0) {
             System.out.println("Choose option: ");
             System.out.println("1) Make collection");
             System.out.println("2) Buy collection");
             System.out.println("3) Remove collection");
             System.out.println("4) Add item to collection");
-            System.out.println("5) Exit");
+            System.out.println("5) Show Collection");
+            System.out.println("0) Exit");
             menu = input.nextInt();
 
             switch (menu) {
