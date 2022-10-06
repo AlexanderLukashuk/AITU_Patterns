@@ -4,10 +4,10 @@ import Entities.Book;
 
 public abstract class BookDecorator extends Book {
 
-    protected Book iBook;
+    protected Book book;
 
-    public BookDecorator(Book iBook) {
-        super(iBook);
+    public BookDecorator(Book book) {
+        super(book);
     }
 
     @Override

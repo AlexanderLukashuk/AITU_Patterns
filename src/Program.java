@@ -1,4 +1,10 @@
 import Entities.*;
+import Entities.Books.PsychologicalBook;
+import Entities.Books.RomanceBook;
+import Entities.Books.SciFiBook;
+import Entities.Books.SubBookDecorator.AdditionalEditionBook;
+import Entities.Books.SubBookDecorator.LimitedCollectionBook;
+import Entities.Books.SubBookDecorator.SignatureBook;
 import Interfaces.ICar;
 import Interfaces.IGame;
 import Observer.Interfaces.IObserver;
@@ -84,7 +90,157 @@ public class Program {
                                 all_collections.get(all_collections.size() + 1).collection.add(new Item(temp_item_name, temp_item_price));
                                 break;
                             case 2:
-                                all_collections.get(all_collections.size() + 1).collection.add(new Book(temp_item_name, temp_item_price));
+                                int bookType = 0;
+
+                                while (true) {
+                                    System.out.println("Choose book type: ");
+                                    System.out.println("1) Psychological book");
+                                    System.out.println("2) Romance book");
+                                    System.out.println("3) SciFi book");
+
+                                    bookType = input.nextInt();
+
+                                    if (bookType > 0 && bookType < 4) {
+                                        break;
+                                    } else {
+                                        System.out.println("Error, something went wrong");
+                                        System.out.println("Try again");
+                                    }
+                                }
+
+                                int bookFeatures;
+                                switch (bookType) {
+                                    case 1:
+                                        bookFeatures = 0;
+
+                                        while (true) {
+                                            System.out.println("Choose features of book: ");
+                                            System.out.println("1) No features");
+                                            System.out.println("2) Additional edition");
+                                            System.out.println("3) Limited edition");
+                                            System.out.println("4) Signature author");
+                                            System.out.print("Your choice: ");
+
+                                            bookFeatures = input.nextInt();
+
+                                            if (bookFeatures > 0 && bookFeatures < 5) {
+                                                break;
+                                            } else {
+                                                System.out.println("Error, something went wrong");
+                                                System.out.println("Try again");
+                                            }
+                                        }
+                                         PsychologicalBook psychologicalBook = new PsychologicalBook(temp_item_name, temp_item_price);
+
+//                                        LuxuryCar car = new LuxuryCar(new BasicCar(temp_item_name, temp_item_price));
+
+                                        switch (bookFeatures) {
+                                            case 1:
+                                                all_collections.get(all_collections.size() - 1).collection.add(psychologicalBook);
+                                                break;
+                                            case 2:
+                                                AdditionalEditionBook additionalEditionBook = new AdditionalEditionBook(psychologicalBook);
+                                                all_collections.get(all_collections.size() - 1).collection.add(additionalEditionBook);
+                                                break;
+                                            case 3:
+                                                LimitedCollectionBook limitedCollectionBook = new LimitedCollectionBook(psychologicalBook);
+                                                all_collections.get(all_collections.size() - 1).collection.add(limitedCollectionBook);
+                                                break;
+                                            case 4:
+                                                SignatureBook signatureBook = new SignatureBook(psychologicalBook);
+                                                all_collections.get(all_collections.size() - 1).collection.add(signatureBook);
+                                                break;
+                                        }
+
+//                                        all_collections.get(all_collections.size() - 1).collection.add(new PsychologicalBook(temp_item_name, temp_item_price));
+                                        break;
+                                    case 2:
+                                        bookFeatures = 0;
+
+                                        while (true) {
+                                            System.out.println("Choose features of book: ");
+                                            System.out.println("1) No features");
+                                            System.out.println("2) Additional edition");
+                                            System.out.println("3) Limited edition");
+                                            System.out.println("4) Signature author");
+                                            System.out.print("Your choice: ");
+
+                                            bookFeatures = input.nextInt();
+
+                                            if (bookFeatures > 0 && bookFeatures < 5) {
+                                                break;
+                                            } else {
+                                                System.out.println("Error, something went wrong");
+                                                System.out.println("Try again");
+                                            }
+                                        }
+                                        RomanceBook romanceBook = new RomanceBook(temp_item_name, temp_item_price);
+
+//                                        LuxuryCar car = new LuxuryCar(new BasicCar(temp_item_name, temp_item_price));
+
+                                        switch (bookFeatures) {
+                                            case 1:
+                                                all_collections.get(all_collections.size() - 1).collection.add(romanceBook);
+                                                break;
+                                            case 2:
+                                                AdditionalEditionBook additionalEditionBook = new AdditionalEditionBook(romanceBook);
+                                                all_collections.get(all_collections.size() - 1).collection.add(additionalEditionBook);
+                                                break;
+                                            case 3:
+                                                LimitedCollectionBook limitedCollectionBook = new LimitedCollectionBook(romanceBook);
+                                                all_collections.get(all_collections.size() - 1).collection.add(limitedCollectionBook);
+                                                break;
+                                            case 4:
+                                                SignatureBook signatureBook = new SignatureBook(romanceBook);
+                                                all_collections.get(all_collections.size() - 1).collection.add(signatureBook);
+                                                break;
+                                        }
+
+//                                        all_collections.get(all_collections.size() - 1).collection.add(new RomanceBook(temp_item_name, temp_item_price));
+                                        break;
+                                    case 3:
+                                        bookFeatures = 0;
+
+                                        while (true) {
+                                            System.out.println("Choose features of book: ");
+                                            System.out.println("1) No features");
+                                            System.out.println("2) Additional edition");
+                                            System.out.println("3) Limited edition");
+                                            System.out.println("4) Signature author");
+                                            System.out.print("Your choice: ");
+
+                                            bookFeatures = input.nextInt();
+
+                                            if (bookFeatures > 0 && bookFeatures < 5) {
+                                                break;
+                                            } else {
+                                                System.out.println("Error, something went wrong");
+                                                System.out.println("Try again");
+                                            }
+                                        }
+                                        SciFiBook sciFiBook = new SciFiBook(temp_item_name, temp_item_price);
+
+                                        switch (bookFeatures) {
+                                            case 1:
+                                                all_collections.get(all_collections.size() - 1).collection.add(sciFiBook);
+                                                break;
+                                            case 2:
+                                                AdditionalEditionBook additionalEditionBook = new AdditionalEditionBook(sciFiBook);
+                                                all_collections.get(all_collections.size() - 1).collection.add(additionalEditionBook);
+                                                break;
+                                            case 3:
+                                                LimitedCollectionBook limitedCollectionBook = new LimitedCollectionBook(sciFiBook);
+                                                all_collections.get(all_collections.size() - 1).collection.add(limitedCollectionBook);
+                                                break;
+                                            case 4:
+                                                SignatureBook signatureBook = new SignatureBook(sciFiBook);
+                                                all_collections.get(all_collections.size() - 1).collection.add(signatureBook);
+                                                break;
+                                        }
+                                        break;
+
+                                }
+//                                all_collections.get(all_collections.size() + 1).collection.add(new Book(temp_item_name, temp_item_price));
                                 break;
                             case 3:
                                 int gameType = 0;
@@ -216,7 +372,7 @@ public class Program {
                             all_collections.get(collection_number - 1).collection.add(new Item(temp_item_name, temp_item_price));
                             break;
                         case "Book":
-                            all_collections.get(collection_number - 1).collection.add(new Book(temp_item_name, temp_item_price));
+//                            all_collections.get(collection_number - 1).collection.add(new Book(temp_item_name, temp_item_price));
                             break;
                         case "Game":
                             all_collections.get(collection_number - 1).collection.add(new PcGame(temp_item_name, temp_item_price));
@@ -227,6 +383,23 @@ public class Program {
                         case "Painting":
                             all_collections.get(collection_number - 1).collection.add(new Painting(temp_item_name, temp_item_price));
                             break;
+                    }
+                case 5:
+                    int collectionNumber = 0;
+                    System.out.println("Choose collection");
+                    for (int i = 0; i < all_collections.size(); i++) {
+                        System.out.println((i + 1) + ") " + all_collections.get(i).collection.get(i).getClass().getSimpleName() + "s collection" + all_collections.get(i).GetName());
+                    }
+                    collectionNumber = input.nextInt();
+                    collectionNumber--;
+
+                    for (int i = 0; i < all_collections.size(); i++) {
+                        System.out.println((i + 1) + ") " + all_collections.get(i).collection.get(i).getClass().getSimpleName() + "s collection" + all_collections.get(i).GetName());
+                        if (i == collectionNumber) {
+                            for (int j = 0; j < all_collections.get(i).collection.size(); j++) {
+                                System.out.println("Name: " + all_collections.get(i).collection.get(j).Name + "Price: " );
+                            }
+                        }
                     }
                 case 0:
                     System.out.println("Bye");

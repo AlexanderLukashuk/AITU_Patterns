@@ -4,17 +4,18 @@ import Decorator.BookDecorator;
 import Entities.Book;
 
 public class LimitedCollectionBook extends BookDecorator {
-    public LimitedCollectionBook(Book iBook){
-        this.iBook = iBook;
+    public LimitedCollectionBook(Book book){
+        super(book);
+//        this.book = book;
     }
 
     @Override
     public double getPrice() {
-        return iBook.getPrice() + 120;
+        return book.getPrice() + 120;
     }
 
     @Override
     public String getVoucher() {
-        return iBook.getVoucher()+", limited collection cost (120)";
+        return book.getVoucher()+", limited collection cost (120)";
     }
 }

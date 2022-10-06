@@ -5,18 +5,18 @@ import Entities.Book;
 
 public class SignatureBook extends BookDecorator {
 
-    public SignatureBook(Book iBook){
-        super(iBook);
+    public SignatureBook(Book book){
+        super(book);
     }
 
     @Override
     public String getVoucher() {
-        return iBook.getVoucher()+", signature of author (20.8)";
+        return book.getVoucher()+", signature of author (20.8)";
     }
 
 
     @Override
     public double getPrice() {
-        return iBook.getPrice() + 20.8;
+        return book.getPrice() + 20.8;
     }
 }
