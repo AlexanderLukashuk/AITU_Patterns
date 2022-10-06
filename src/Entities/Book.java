@@ -3,7 +3,7 @@ package Entities;
 import Interfaces.ActionsInterfaces.IRead;
 import Interfaces.MyCollectionInterfaces.CreativeActivity;
 
-public class Book extends CreativeActivity implements IRead {
+public abstract class Book extends CreativeActivity implements IRead {
 
     public int NumberOfPages;
 
@@ -17,8 +17,20 @@ public class Book extends CreativeActivity implements IRead {
         super(name, price, genre, desc);
     }
 
+    public Book(Book iBook) {
+        Name = iBook.Name;
+        Price = iBook.Price;
+    }
+
     @Override
     public void Read() {
         System.out.println("Intensive reading");
+    }
+
+    public String getVoucher() {
+        return "Features:";
+    }
+    public double getPrice() {
+        return 5;
     }
 }
