@@ -7,7 +7,7 @@ import Interfaces.ICar;
 public abstract class CarDecorator extends Car {
 
 //    protected ICar Car;
-    protected ICar MyCar;
+    protected Car MyCar;
 
 //    public CarDecorator(ICar car) {
 //        Car = car;

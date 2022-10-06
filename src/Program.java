@@ -106,11 +106,11 @@ public class Program {
 
                                 switch (gameType) {
                                     case 1:
-                                        all_collections.get(all_collections.size() + 1).collection.add(new Game(temp_item_name, temp_item_price));
+                                        all_collections.get(all_collections.size() + 1).collection.add(new PcGame(temp_item_name, temp_item_price));
                                         break;
                                     case 2:
-                                        IGame dlcGame = new GameDLC(new Game(temp_item_name, temp_item_price));
-                                        all_collections.get(all_collections.size() + 1).collection.add((Item) dlcGame);
+//                                        IGame dlcGame = new GameDLC(new Game(temp_item_name, temp_item_price));
+                                        all_collections.get(all_collections.size() + 1).collection.add(new GameDLC(temp_item_name, temp_item_price));
                                         break;
                                 }
 
@@ -219,7 +219,7 @@ public class Program {
                             all_collections.get(collection_number - 1).collection.add(new Book(temp_item_name, temp_item_price));
                             break;
                         case "Game":
-                            all_collections.get(collection_number - 1).collection.add(new Game(temp_item_name, temp_item_price));
+                            all_collections.get(collection_number - 1).collection.add(new PcGame(temp_item_name, temp_item_price));
                             break;
                         case "Car":
                             all_collections.get(collection_number - 1).collection.add(new BasicCar(temp_item_name, temp_item_price));
@@ -228,6 +228,9 @@ public class Program {
                             all_collections.get(collection_number - 1).collection.add(new Painting(temp_item_name, temp_item_price));
                             break;
                     }
+                case 0:
+                    System.out.println("Bye");
+                    break;
 
 
             }

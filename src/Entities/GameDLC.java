@@ -5,8 +5,12 @@ import Interfaces.IGame;
 
 public class GameDLC extends GameDecorator {
 
-    public GameDLC(IGame game) {
+    public GameDLC(Game game) {
         super(game);
+    }
+
+    public GameDLC(String name, int price) {
+        super(name, price);
     }
 
     @Override

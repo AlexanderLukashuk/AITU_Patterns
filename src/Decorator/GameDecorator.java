@@ -3,12 +3,16 @@ package Decorator;
 import Entities.Game;
 import Interfaces.IGame;
 
-public class GameDecorator implements IGame {
+public abstract class GameDecorator extends Game {
 
-    protected IGame MyGame;
+    protected Game MyGame;
 
-    public GameDecorator(IGame game) {
+    public GameDecorator(Game game) {
         MyGame = game;
+    }
+
+    public GameDecorator(String name, int price) {
+        super(name, price);
     }
 
     @Override

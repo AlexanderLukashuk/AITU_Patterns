@@ -3,9 +3,14 @@ package Entities;
 import Interfaces.IGame;
 import Interfaces.MyCollectionInterfaces.CreativeActivity;
 
-public class Game extends CreativeActivity implements IGame {
+public abstract class Game extends CreativeActivity implements IGame {
 
     public Game() {}
+
+    public Game(Game game) {
+        Name = game.Name;
+        Price = game.Price;
+    }
 
     public Game(String name, int price) {
         super(name, price);
