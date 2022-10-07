@@ -167,7 +167,6 @@ public class Program {
                                                     case 4:
                                                         all_collections.get(all_collections.size() - 1).collection.add(additionalEditionBook);
                                                         break;
-
                                                 }
 
 //                                                all_collections.get(all_collections.size() - 1).collection.add(additionalEditionBook);
@@ -199,7 +198,6 @@ public class Program {
                                                     case 4:
                                                         all_collections.get(all_collections.size() - 1).collection.add(limitedCollectionBook);
                                                         break;
-
                                                 }
 
 //                                                all_collections.get(all_collections.size() - 1).collection.add(limitedCollectionBook);
@@ -231,10 +229,9 @@ public class Program {
                                                     case 4:
                                                         all_collections.get(all_collections.size() - 1).collection.add(signatureBook);
                                                         break;
-
                                                 }
 
-                                                all_collections.get(all_collections.size() - 1).collection.add(signatureBook);
+//                                                all_collections.get(all_collections.size() - 1).collection.add(signatureBook);
                                                 break;
                                         }
 
@@ -270,15 +267,93 @@ public class Program {
                                                 break;
                                             case 2:
                                                 AdditionalEditionBook additionalEditionBook = new AdditionalEditionBook(romanceBook);
-                                                all_collections.get(all_collections.size() - 1).collection.add(additionalEditionBook);
+                                                System.out.println("Add 1) Limited edition or 2) Signature author?");
+                                                System.out.println("Or 3) both?");
+                                                System.out.println("4) Or don't add anything yet?");
+                                                System.out.print("Enter your choice(1-4): ");
+
+                                                moreBookFeatures = input.nextInt();
+
+                                                switch (moreBookFeatures) {
+                                                    case 1:
+                                                        LimitedCollectionBook tempLimitedCollectionBook = new LimitedCollectionBook(additionalEditionBook);
+                                                        all_collections.get(all_collections.size() - 1).collection.add(tempLimitedCollectionBook);
+                                                        break;
+                                                    case 2:
+                                                        SignatureBook tempSignatureBook = new SignatureBook(additionalEditionBook);
+                                                        all_collections.get(all_collections.size() - 1).collection.add(tempSignatureBook);
+                                                        break;
+                                                    case 3:
+                                                        LimitedCollectionBook tempLimitedCollectionBook2 = new LimitedCollectionBook(additionalEditionBook);
+                                                        SignatureBook tempSignatureBook2 = new SignatureBook(tempLimitedCollectionBook2);
+                                                        all_collections.get(all_collections.size() - 1).collection.add(tempSignatureBook2);
+                                                        break;
+                                                    case 4:
+                                                        all_collections.get(all_collections.size() - 1).collection.add(additionalEditionBook);
+                                                        break;
+                                                }
+
+//                                                all_collections.get(all_collections.size() - 1).collection.add(additionalEditionBook);
                                                 break;
                                             case 3:
                                                 LimitedCollectionBook limitedCollectionBook = new LimitedCollectionBook(romanceBook);
-                                                all_collections.get(all_collections.size() - 1).collection.add(limitedCollectionBook);
+                                                System.out.println("Add 1) Additional Edition or 2) Signature author?");
+                                                System.out.println("Or 3) both?");
+                                                System.out.println("4) Or don't add anything yet?");
+                                                System.out.print("Enter your choice(1-4): ");
+
+                                                moreBookFeatures = input.nextInt();
+
+                                                switch (moreBookFeatures) {
+                                                    case 1:
+                                                        AdditionalEditionBook tempAdditionalEditionBook = new AdditionalEditionBook(limitedCollectionBook);
+                                                        all_collections.get(all_collections.size() - 1).collection.add(tempAdditionalEditionBook);
+                                                        break;
+                                                    case 2:
+                                                        SignatureBook tempSignatureBook = new SignatureBook(limitedCollectionBook);
+                                                        all_collections.get(all_collections.size() - 1).collection.add(tempSignatureBook);
+                                                        break;
+                                                    case 3:
+                                                        AdditionalEditionBook tempAdditionalEditionBook2 = new AdditionalEditionBook(limitedCollectionBook);
+                                                        SignatureBook tempSignatureBook2 = new SignatureBook(tempAdditionalEditionBook2);
+                                                        all_collections.get(all_collections.size() - 1).collection.add(tempSignatureBook2);
+                                                        break;
+                                                    case 4:
+                                                        all_collections.get(all_collections.size() - 1).collection.add(limitedCollectionBook);
+                                                        break;
+                                                }
+
+//                                                all_collections.get(all_collections.size() - 1).collection.add(limitedCollectionBook);
                                                 break;
                                             case 4:
                                                 SignatureBook signatureBook = new SignatureBook(romanceBook);
-                                                all_collections.get(all_collections.size() - 1).collection.add(signatureBook);
+                                                System.out.println("Add 1) Additional Edition or 2) Limited Collection?");
+                                                System.out.println("Or 3) both?");
+                                                System.out.println("4) Or don't add anything yet?");
+                                                System.out.print("Enter your choice(1-4): ");
+
+                                                moreBookFeatures = input.nextInt();
+
+                                                switch (moreBookFeatures) {
+                                                    case 1:
+                                                        AdditionalEditionBook tempAdditionalEditionBook = new AdditionalEditionBook(signatureBook);
+                                                        all_collections.get(all_collections.size() - 1).collection.add(tempAdditionalEditionBook);
+                                                        break;
+                                                    case 2:
+                                                        LimitedCollectionBook tempLimitedCollectionBook = new LimitedCollectionBook(signatureBook);
+                                                        all_collections.get(all_collections.size() - 1).collection.add(tempLimitedCollectionBook);
+                                                        break;
+                                                    case 3:
+                                                        AdditionalEditionBook tempAdditionalEditionBook2 = new AdditionalEditionBook(signatureBook);
+                                                        LimitedCollectionBook tempLimitedCollectionBook2 = new LimitedCollectionBook(tempAdditionalEditionBook2);
+                                                        all_collections.get(all_collections.size() - 1).collection.add(tempLimitedCollectionBook2);
+                                                        break;
+                                                    case 4:
+                                                        all_collections.get(all_collections.size() - 1).collection.add(signatureBook);
+                                                        break;
+                                                }
+
+//                                                all_collections.get(all_collections.size() - 1).collection.add(signatureBook);
                                                 break;
                                         }
 
@@ -312,15 +387,93 @@ public class Program {
                                                 break;
                                             case 2:
                                                 AdditionalEditionBook additionalEditionBook = new AdditionalEditionBook(sciFiBook);
-                                                all_collections.get(all_collections.size() - 1).collection.add(additionalEditionBook);
+                                                System.out.println("Add 1) Limited edition or 2) Signature author?");
+                                                System.out.println("Or 3) both?");
+                                                System.out.println("4) Or don't add anything yet?");
+                                                System.out.print("Enter your choice(1-4): ");
+
+                                                moreBookFeatures = input.nextInt();
+
+                                                switch (moreBookFeatures) {
+                                                    case 1:
+                                                        LimitedCollectionBook tempLimitedCollectionBook = new LimitedCollectionBook(additionalEditionBook);
+                                                        all_collections.get(all_collections.size() - 1).collection.add(tempLimitedCollectionBook);
+                                                        break;
+                                                    case 2:
+                                                        SignatureBook tempSignatureBook = new SignatureBook(additionalEditionBook);
+                                                        all_collections.get(all_collections.size() - 1).collection.add(tempSignatureBook);
+                                                        break;
+                                                    case 3:
+                                                        LimitedCollectionBook tempLimitedCollectionBook2 = new LimitedCollectionBook(additionalEditionBook);
+                                                        SignatureBook tempSignatureBook2 = new SignatureBook(tempLimitedCollectionBook2);
+                                                        all_collections.get(all_collections.size() - 1).collection.add(tempSignatureBook2);
+                                                        break;
+                                                    case 4:
+                                                        all_collections.get(all_collections.size() - 1).collection.add(additionalEditionBook);
+                                                        break;
+                                                }
+
+//                                                all_collections.get(all_collections.size() - 1).collection.add(additionalEditionBook);
                                                 break;
                                             case 3:
                                                 LimitedCollectionBook limitedCollectionBook = new LimitedCollectionBook(sciFiBook);
-                                                all_collections.get(all_collections.size() - 1).collection.add(limitedCollectionBook);
+                                                System.out.println("Add 1) Additional Edition or 2) Signature author?");
+                                                System.out.println("Or 3) both?");
+                                                System.out.println("4) Or don't add anything yet?");
+                                                System.out.print("Enter your choice(1-4): ");
+
+                                                moreBookFeatures = input.nextInt();
+
+                                                switch (moreBookFeatures) {
+                                                    case 1:
+                                                        AdditionalEditionBook tempAdditionalEditionBook = new AdditionalEditionBook(limitedCollectionBook);
+                                                        all_collections.get(all_collections.size() - 1).collection.add(tempAdditionalEditionBook);
+                                                        break;
+                                                    case 2:
+                                                        SignatureBook tempSignatureBook = new SignatureBook(limitedCollectionBook);
+                                                        all_collections.get(all_collections.size() - 1).collection.add(tempSignatureBook);
+                                                        break;
+                                                    case 3:
+                                                        AdditionalEditionBook tempAdditionalEditionBook2 = new AdditionalEditionBook(limitedCollectionBook);
+                                                        SignatureBook tempSignatureBook2 = new SignatureBook(tempAdditionalEditionBook2);
+                                                        all_collections.get(all_collections.size() - 1).collection.add(tempSignatureBook2);
+                                                        break;
+                                                    case 4:
+                                                        all_collections.get(all_collections.size() - 1).collection.add(limitedCollectionBook);
+                                                        break;
+                                                }
+
+//                                                all_collections.get(all_collections.size() - 1).collection.add(limitedCollectionBook);
                                                 break;
                                             case 4:
                                                 SignatureBook signatureBook = new SignatureBook(sciFiBook);
-                                                all_collections.get(all_collections.size() - 1).collection.add(signatureBook);
+                                                System.out.println("Add 1) Additional Edition or 2) Limited Collection?");
+                                                System.out.println("Or 3) both?");
+                                                System.out.println("4) Or don't add anything yet?");
+                                                System.out.print("Enter your choice(1-4): ");
+
+                                                moreBookFeatures = input.nextInt();
+
+                                                switch (moreBookFeatures) {
+                                                    case 1:
+                                                        AdditionalEditionBook tempAdditionalEditionBook = new AdditionalEditionBook(signatureBook);
+                                                        all_collections.get(all_collections.size() - 1).collection.add(tempAdditionalEditionBook);
+                                                        break;
+                                                    case 2:
+                                                        LimitedCollectionBook tempLimitedCollectionBook = new LimitedCollectionBook(signatureBook);
+                                                        all_collections.get(all_collections.size() - 1).collection.add(tempLimitedCollectionBook);
+                                                        break;
+                                                    case 3:
+                                                        AdditionalEditionBook tempAdditionalEditionBook2 = new AdditionalEditionBook(signatureBook);
+                                                        LimitedCollectionBook tempLimitedCollectionBook2 = new LimitedCollectionBook(tempAdditionalEditionBook2);
+                                                        all_collections.get(all_collections.size() - 1).collection.add(tempLimitedCollectionBook2);
+                                                        break;
+                                                    case 4:
+                                                        all_collections.get(all_collections.size() - 1).collection.add(signatureBook);
+                                                        break;
+                                                }
+
+//                                                all_collections.get(all_collections.size() - 1).collection.add(signatureBook);
                                                 break;
                                         }
                                         break;
