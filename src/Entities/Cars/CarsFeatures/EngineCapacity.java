@@ -20,8 +20,10 @@ public class EngineCapacity extends CarDecorator {
     }
 
     @Override
-    public int getPrice(int price) {
-        this.Price = (int) price;
-        return price;
+    public int getPrice() {
+//        this.Price = (int) price;
+//        return price;
+
+        return Price + 500;
     }
 }

@@ -20,8 +20,7 @@ public class CarMotor extends CarDecorator {
     }
 
     @Override
-    public int getPrice(int price) {
-        this.Price = price;
-        return price;
+    public int getPrice() {
+        return Price + 1000;
     }
 }

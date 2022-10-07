@@ -48,4 +48,8 @@ public abstract class Car extends Item implements ICar {
     public String getVoucher() {
         return "Car";
     }
+
+    public int getPrice() {
+        return Price;
+    }
 }

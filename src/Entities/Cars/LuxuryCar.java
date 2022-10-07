@@ -4,7 +4,7 @@ import Decorator.CarDecorator;
 import Entities.Car;
 import Interfaces.ICar;
 
-public class LuxuryCar extends CarDecorator {
+public class LuxuryCar extends Car {
 
     private Car car;
 
@@ -17,6 +17,17 @@ public class LuxuryCar extends CarDecorator {
     public int GetCost() {
         return car.GetCost() + 2000;
     }
+
+//    @Override
+//    public int getPrice(int price) {
+//        return Price;
+//    }
+
+    @Override
+    public int getPrice() {
+        return Price;
+    }
+
 
 //    public LuxuryCar(ICar car) {
 //        super(car);

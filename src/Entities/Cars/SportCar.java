@@ -4,7 +4,7 @@ import Decorator.CarDecorator;
 import Entities.Car;
 import Interfaces.ICar;
 
-public class SportCar extends CarDecorator {
+public class SportCar extends Car {
 
     private Car car;
 
@@ -17,6 +17,17 @@ public class SportCar extends CarDecorator {
     public int GetCost() {
         return car.GetCost() + 1000;
     }
+
+//    @Override
+//    public int getPrice(int price) {
+//        return Price;
+//    }
+
+    @Override
+    public int getPrice() {
+        return Price;
+    }
+
 
     //
 ////    public SportCar(ICar car) {

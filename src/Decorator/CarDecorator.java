@@ -37,5 +37,5 @@ public abstract class CarDecorator extends Car {
         return "Features:";
     }
 
-    public abstract int getPrice(int price);
+    public abstract int getPrice();
 }
