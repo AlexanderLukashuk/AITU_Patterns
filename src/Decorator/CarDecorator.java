@@ -31,4 +31,11 @@ public abstract class CarDecorator extends Car {
     public String GetCarName() {
         return this.MyCar.GetCarName();
     }
+
+    @Override
+    public String getVoucher() {
+        return "Features:";
+    }
+
+    public abstract int getPrice(int price);
 }

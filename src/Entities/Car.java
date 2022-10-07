@@ -44,4 +44,8 @@ public abstract class Car extends Item implements ICar {
 //        return this.Name;
         return GetName();
     }
+
+    public String getVoucher() {
+        return "Car";
+    }
 }

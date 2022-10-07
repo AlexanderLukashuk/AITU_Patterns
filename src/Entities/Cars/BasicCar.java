@@ -1,4 +1,6 @@
-package Entities;
+package Entities.Cars;
+
+import Entities.Car;
 
 public class BasicCar extends Car {
 

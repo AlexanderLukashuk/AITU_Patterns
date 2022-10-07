@@ -5,13 +5,13 @@ import Entities.Books.SciFiBook;
 import Entities.Books.SubBookDecorator.AdditionalEditionBook;
 import Entities.Books.SubBookDecorator.LimitedCollectionBook;
 import Entities.Books.SubBookDecorator.SignatureBook;
-import Interfaces.ICar;
-import Interfaces.IGame;
+import Entities.Cars.BasicCar;
+import Entities.Cars.LuxuryCar;
+import Entities.Cars.SportCar;
 import Observer.Interfaces.IObserver;
 import Observer.MyCollectionSubsciber;
 
 import java.util.ArrayList;
-import java.util.List;
 import java.util.Scanner;
 
 public class Program {
