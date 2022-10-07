@@ -7,6 +7,8 @@ public class AdditionalEditionBook extends BookDecorator {
     public AdditionalEditionBook(Book book) {
 //        this.iBook = iBook;
         super(book);
+
+        setPrice();
     }
 
     @Override
@@ -15,7 +17,12 @@ public class AdditionalEditionBook extends BookDecorator {
     }
 
     @Override
-    public double getPrice() {
-        return book.getPrice() + 30.56;
+    public int getPrice() {
+        return this.GetPrice() + 30;
+    }
+
+    @Override
+    public void setPrice() {
+        this.Price += 10;
     }
 }

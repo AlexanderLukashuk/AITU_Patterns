@@ -14,7 +14,7 @@ public class PsychologicalBook extends Book {
     }
 
     @Override
-    public double getPrice() {
-        return 70;
+    public int getPrice() {
+        return Price;
     }
 }

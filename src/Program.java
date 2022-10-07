@@ -21,7 +21,7 @@ public class Program {
         Scanner input = new Scanner(System.in);
         int menu = -1;
         String collection_name = null;
-        List<MyCollection> all_collections = new ArrayList<>();
+        ArrayList<MyCollection> all_collections = new ArrayList<>();
         CollectionTypes collection_type = new CollectionTypes();
         int typeChoice = 0;
         MyCollection temp_collection = new MyCollection();
@@ -64,8 +64,9 @@ public class Program {
                     }
 
                     all_collections.add(new MyCollection(collection_name));
+                    System.out.println(all_collections.get(0).Name);
 
-                    all_collections.add(new MyCollection(collection_name));
+//                    all_collections.add(new MyCollection(collection_name));
 
                     System.out.print("Enter how many items would you add: ");
                     int temp_collection_length = 0;
@@ -73,7 +74,7 @@ public class Program {
                     String temp_item_name = null;
                     int temp_item_price = 0;
 
-                    for (int i = 0; i < temp_collection_length - 1; i++) {
+                    for (int i = 0; i <= temp_collection_length - 1; i++) {
                         System.out.print("Enter item's name: ");
 //                        temp_item_name = input.nextLine();
                         temp_item_name = input.next();
@@ -134,13 +135,42 @@ public class Program {
 
 //                                        LuxuryCar car = new LuxuryCar(new BasicCar(temp_item_name, temp_item_price));
 
+                                        int temp = 0;
+
                                         switch (bookFeatures) {
                                             case 1:
                                                 all_collections.get(all_collections.size() - 1).collection.add(psychologicalBook);
                                                 break;
                                             case 2:
                                                 AdditionalEditionBook additionalEditionBook = new AdditionalEditionBook(psychologicalBook);
-                                                all_collections.get(all_collections.size() - 1).collection.add(additionalEditionBook);
+                                                System.out.println("Add 1) Limited edition or 2) Signature author?");
+                                                System.out.println("Or 3) both?");
+                                                System.out.println("Or don't add anything yet?");
+                                                System.out.print("Enter your choice(1-3): ");
+
+                                                temp = input.nextInt();
+
+                                                switch (temp) {
+                                                    case 1:
+                                                        LimitedCollectionBook l1 = new LimitedCollectionBook(additionalEditionBook);
+                                                        all_collections.get(all_collections.size() - 1).collection.add(l1);
+                                                        break;
+                                                    case 2:
+                                                        SignatureBook s1 = new SignatureBook(additionalEditionBook);
+                                                        all_collections.get(all_collections.size() - 1).collection.add(s1);
+                                                        break;
+                                                    case 3:
+                                                        LimitedCollectionBook l2 = new LimitedCollectionBook(additionalEditionBook);
+                                                        SignatureBook s2 = new SignatureBook(l2);
+                                                        all_collections.get(all_collections.size() - 1).collection.add(s2);
+                                                        break;
+                                                    case 4:
+                                                        all_collections.get(all_collections.size() - 1).collection.add(additionalEditionBook);
+                                                        break;
+
+                                                }
+
+//                                                all_collections.get(all_collections.size() - 1).collection.add(additionalEditionBook);
                                                 break;
                                             case 3:
                                                 LimitedCollectionBook limitedCollectionBook = new LimitedCollectionBook(psychologicalBook);
@@ -394,13 +424,18 @@ public class Program {
                     collectionNumber--;
 
                     for (int i = 0; i < all_collections.size(); i++) {
-                        System.out.println((i + 1) + ") " + all_collections.get(i).collection.get(i).getClass().getSimpleName() + "s collection" + all_collections.get(i).GetName());
+                        System.out.println((i + 1) + ") " + all_collections.get(i).collection.get(i).getClass().getSimpleName() + "s collection " + all_collections.get(i).GetName());
                         if (i == collectionNumber) {
                             for (int j = 0; j < all_collections.get(i).collection.size(); j++) {
-                                System.out.println("Name: " + all_collections.get(i).collection.get(j).Name + "Price: " );
+                                System.out.println("Name: " + all_collections.get(i).collection.get(j).Name + " Price: " + all_collections.get(i).collection.get(j).GetPrice());
                             }
                         }
                     }
+                    break;
+                case 6:
+                    System.out.println(all_collections.size());
+                    System.out.println(all_collections.get(0).collection.size());
+                    break;
                 case 0:
                     System.out.println("Bye");
                     break;

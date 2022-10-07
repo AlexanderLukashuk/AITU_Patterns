@@ -14,7 +14,7 @@ public class SciFiBook extends Book {
     }
 
     @Override
-    public double getPrice() {
-        return 100;
+    public int getPrice() {
+        return Price;
     }
 }

@@ -7,15 +7,21 @@ public class LimitedCollectionBook extends BookDecorator {
     public LimitedCollectionBook(Book book){
         super(book);
 //        this.book = book;
+        setPrice();
     }
 
     @Override
-    public double getPrice() {
+    public int getPrice() {
         return book.getPrice() + 120;
     }
 
     @Override
     public String getVoucher() {
-        return book.getVoucher()+", limited collection cost (120)";
+        return this.GetPrice()+", limited collection cost (120)";
+    }
+
+    @Override
+    public void setPrice() {
+        this.Price += 25;
     }
 }

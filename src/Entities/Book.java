@@ -30,7 +30,9 @@ public abstract class Book extends CreativeActivity implements IRead {
     public String getVoucher() {
         return "Features:";
     }
-    public double getPrice() {
-        return 5;
+    public int getPrice() {
+        return Price;
     }
+
+    public void setPrice() { }
 }

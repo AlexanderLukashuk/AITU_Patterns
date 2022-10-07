@@ -7,6 +7,7 @@ public class SignatureBook extends BookDecorator {
 
     public SignatureBook(Book book){
         super(book);
+        setPrice();
     }
 
     @Override
@@ -16,7 +17,12 @@ public class SignatureBook extends BookDecorator {
 
 
     @Override
-    public double getPrice() {
-        return book.getPrice() + 20.8;
+    public int getPrice() {
+        return this.Price + 20;
+    }
+
+    @Override
+    public void setPrice() {
+        this.Price += 200;
     }
 }
