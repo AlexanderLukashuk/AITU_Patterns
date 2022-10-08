@@ -653,10 +653,6 @@ public class Program {
 //                                        Car sportCar = new SportCar(new Car(temp_item_name, temp_item_price));
 //                                        all_collections.get(all_collections.size() - 1).collection.add(new SportCar(new BasicCar(temp_item_name, temp_item_price)));
                                         break;
-                                    case 4:
-//                                        ICar sportLuxuryCar = new SportCar(new LuxuryCar(new Car(temp_item_name, temp_item_price)));
-                                        all_collections.get(all_collections.size() + 1).collection.add(new LuxuryCar(new SportCar(new BasicCar(temp_item_name, temp_item_price))));
-                                        break;
                                 }
 
 //                                all_collections.get(all_collections.size() + 1).collection.add(new Car(temp_item_name, temp_item_price));
