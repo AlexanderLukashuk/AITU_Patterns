@@ -16,6 +16,6 @@ public class CarMotor extends CarDecorator {
 
     @Override
     public int getPrice() {
-        return Price + 1000;
+        return Price += 1000;
     }
 }

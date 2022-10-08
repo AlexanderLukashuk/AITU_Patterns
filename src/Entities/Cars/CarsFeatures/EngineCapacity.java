@@ -16,6 +16,6 @@ public class EngineCapacity extends CarDecorator {
 
     @Override
     public int getPrice() {
-        return Price + 500;
+        return Price += 500;
     }
 }
