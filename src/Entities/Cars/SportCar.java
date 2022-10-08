@@ -12,6 +12,10 @@ public class SportCar extends Car {
         super(car);
     }
 
+    public SportCar(String name, int price) {
+        super(name, price);
+    }
+
 
     @Override
     public int GetCost() {
