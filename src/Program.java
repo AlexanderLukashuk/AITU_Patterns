@@ -614,8 +614,44 @@ public class Program {
                                         }
                                         break;
                                     case 3:
+                                        while (true) {
+                                            System.out.println("Want to add features to car?");
+                                            System.out.println("1) No features");
+                                            System.out.println("2) Motor");
+                                            System.out.println("3) Engine capacity");
+                                            System.out.println("4) Both");
+                                            System.out.print("Your choice: ");
+
+                                            carFeatures = input.nextInt();
+
+                                            if (carFeatures > 0 && carFeatures < 5) {
+                                                break;
+                                            } else {
+                                                System.out.println("Error, something went wrong");
+                                                System.out.println("Try again");
+                                            }
+                                        }
+
+                                        switch (carFeatures) {
+                                            case 1:
+                                                all_collections.get(all_collections.size() - 1).collection.add(new SportCar(temp_item_name, temp_item_price));
+                                                break;
+                                            case 2:
+                                                CarMotor carMotor = new CarMotor(new SportCar(temp_item_name, temp_item_price));
+                                                all_collections.get(all_collections.size() - 1).collection.add(carMotor);
+                                                break;
+                                            case 3:
+                                                EngineCapacity engineCapacity = new EngineCapacity(new SportCar(temp_item_name, temp_item_price));
+                                                all_collections.get(all_collections.size() - 1).collection.add(engineCapacity);
+                                                break;
+                                            case 4:
+                                                CarMotor carMotor1 = new CarMotor(new SportCar(temp_item_name, temp_item_price));
+                                                EngineCapacity engineCapacity1 = new EngineCapacity(carMotor1);
+                                                all_collections.get(all_collections.size() - 1).collection.add(engineCapacity1);
+                                                break;
+                                        }
 //                                        Car sportCar = new SportCar(new Car(temp_item_name, temp_item_price));
-                                        all_collections.get(all_collections.size() - 1).collection.add(new SportCar(new BasicCar(temp_item_name, temp_item_price)));
+//                                        all_collections.get(all_collections.size() - 1).collection.add(new SportCar(new BasicCar(temp_item_name, temp_item_price)));
                                         break;
                                     case 4:
 //                                        ICar sportLuxuryCar = new SportCar(new LuxuryCar(new Car(temp_item_name, temp_item_price)));
