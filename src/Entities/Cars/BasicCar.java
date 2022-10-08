@@ -11,11 +11,6 @@ public class BasicCar extends Car {
     }
 
     @Override
-    public int GetCost() {
-        return 0;
-    }
-
-    @Override
     public int getPrice() {
         return Price;
     }

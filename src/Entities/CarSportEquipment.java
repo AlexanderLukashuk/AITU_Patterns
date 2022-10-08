@@ -11,9 +11,8 @@ public class CarSportEquipment extends CarDecorator {
         super(car);
     }
 
-
     @Override
-    public int GetCost() {
-        return car.GetCost() + 1000;
+    public int getPrice() {
+        return 0;
     }
 }

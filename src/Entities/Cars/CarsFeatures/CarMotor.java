@@ -10,11 +10,6 @@ public class CarMotor extends CarDecorator {
     }
 
     @Override
-    public int GetCost() {
-        return 0;
-    }
-
-    @Override
     public String getVoucher() {
         return "Comfort ";
     }

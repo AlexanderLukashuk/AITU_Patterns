@@ -37,8 +37,6 @@ public abstract class Car extends Item implements ICar {
         System.out.println("Basic car");
     }
 
-    public abstract int GetCost();
-
     @Override
     public String GetCarName() {
 //        return this.Name;

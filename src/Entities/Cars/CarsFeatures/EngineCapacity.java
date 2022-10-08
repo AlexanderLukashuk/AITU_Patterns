@@ -10,20 +10,12 @@ public class EngineCapacity extends CarDecorator {
     }
 
     @Override
-    public int GetCost() {
-        return 0;
-    }
-
-    @Override
     public String getVoucher() {
         return "Sport Car";
     }
 
     @Override
     public int getPrice() {
-//        this.Price = (int) price;
-//        return price;
-
         return Price + 500;
     }
 }
