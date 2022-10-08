@@ -12,6 +12,10 @@ public class LuxuryCar extends Car {
         super(car);
     }
 
+    public LuxuryCar(String name, int price) {
+        super(name, price);
+    }
+
 
     @Override
     public int GetCost() {

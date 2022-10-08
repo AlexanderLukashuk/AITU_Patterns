@@ -576,9 +576,42 @@ public class Program {
 //                                        all_collections.get(all_collections.size() - 1).collection.add(new BasicCar(temp_item_name, temp_item_price));
                                         break;
                                     case 2:
-                                        Car car = new BasicCar(temp_item_name, temp_item_price);
-                                        Car luxuryCar = new LuxuryCar(car);
-                                        all_collections.get(all_collections.size() - 1).collection.add(luxuryCar);
+                                        while (true) {
+                                            System.out.println("Want to add features to car?");
+                                            System.out.println("1) No features");
+                                            System.out.println("2) Motor");
+                                            System.out.println("3) Engine capacity");
+                                            System.out.println("4) Both");
+                                            System.out.print("Your choice: ");
+
+                                            carFeatures = input.nextInt();
+
+                                            if (carFeatures > 0 && carFeatures < 5) {
+                                                break;
+                                            } else {
+                                                System.out.println("Error, something went wrong");
+                                                System.out.println("Try again");
+                                            }
+                                        }
+
+                                        switch (carFeatures) {
+                                            case 1:
+                                                all_collections.get(all_collections.size() - 1).collection.add(new LuxuryCar(temp_item_name, temp_item_price));
+                                                break;
+                                            case 2:
+                                                CarMotor carMotor = new CarMotor(new LuxuryCar(temp_item_name, temp_item_price));
+                                                all_collections.get(all_collections.size() - 1).collection.add(carMotor);
+                                                break;
+                                            case 3:
+                                                EngineCapacity engineCapacity = new EngineCapacity(new LuxuryCar(temp_item_name, temp_item_price));
+                                                all_collections.get(all_collections.size() - 1).collection.add(engineCapacity);
+                                                break;
+                                            case 4:
+                                                CarMotor carMotor1 = new CarMotor(new LuxuryCar(temp_item_name, temp_item_price));
+                                                EngineCapacity engineCapacity1 = new EngineCapacity(carMotor1);
+                                                all_collections.get(all_collections.size() - 1).collection.add(engineCapacity1);
+                                                break;
+                                        }
                                         break;
                                     case 3:
 //                                        Car sportCar = new SportCar(new Car(temp_item_name, temp_item_price));
