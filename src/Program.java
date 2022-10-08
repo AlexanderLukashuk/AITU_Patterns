@@ -6,6 +6,8 @@ import Entities.Books.SubBookDecorator.AdditionalEditionBook;
 import Entities.Books.SubBookDecorator.LimitedCollectionBook;
 import Entities.Books.SubBookDecorator.SignatureBook;
 import Entities.Cars.BasicCar;
+import Entities.Cars.CarsFeatures.CarMotor;
+import Entities.Cars.CarsFeatures.EngineCapacity;
 import Entities.Cars.LuxuryCar;
 import Entities.Cars.SportCar;
 import Observer.Interfaces.IObserver;
@@ -519,7 +521,6 @@ public class Program {
                                     System.out.println("1) Basic car");
                                     System.out.println("2) Luxury car");
                                     System.out.println("3) Sport car");
-                                    System.out.println("4) Luxury Sport car");
                                     System.out.print("Your choice: ");
                                     carType = input.nextInt();
 
@@ -531,9 +532,48 @@ public class Program {
                                     }
                                 }
 
+                                int carFeatures = 0;
+
                                 switch (carType) {
                                     case 1:
-                                        all_collections.get(all_collections.size() - 1).collection.add(new BasicCar(temp_item_name, temp_item_price));
+                                        while (true) {
+                                            System.out.println("Want to add features to car?");
+                                            System.out.println("1) No features");
+                                            System.out.println("2) Motor");
+                                            System.out.println("3) Engine capacity");
+                                            System.out.println("4) Both");
+                                            System.out.print("Your choice: ");
+
+                                            carFeatures = input.nextInt();
+
+                                            if (carFeatures > 0 && carFeatures < 5) {
+                                                break;
+                                            } else {
+                                                System.out.println("Error, something went wrong");
+                                                System.out.println("Try again");
+                                            }
+                                        }
+
+                                        switch (carFeatures) {
+                                            case 1:
+                                                all_collections.get(all_collections.size() - 1).collection.add(new BasicCar(temp_item_name, temp_item_price));
+                                                break;
+                                            case 2:
+                                                CarMotor carMotor = new CarMotor(new BasicCar(temp_item_name, temp_item_price));
+                                                all_collections.get(all_collections.size() - 1).collection.add(carMotor);
+                                                break;
+                                            case 3:
+                                                EngineCapacity engineCapacity = new EngineCapacity(new BasicCar(temp_item_name, temp_item_price));
+                                                all_collections.get(all_collections.size() - 1).collection.add(engineCapacity);
+                                                break;
+                                            case 4:
+                                                CarMotor carMotor1 = new CarMotor(new BasicCar(temp_item_name, temp_item_price));
+                                                EngineCapacity engineCapacity1 = new EngineCapacity(carMotor1);
+                                                all_collections.get(all_collections.size() - 1).collection.add(engineCapacity1);
+                                                break;
+                                        }
+
+//                                        all_collections.get(all_collections.size() - 1).collection.add(new BasicCar(temp_item_name, temp_item_price));
                                         break;
                                     case 2:
                                         Car car = new BasicCar(temp_item_name, temp_item_price);
