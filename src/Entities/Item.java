@@ -1,6 +1,6 @@
 package Entities;
 
-public class Item {
+public abstract class Item {
     public String Name;
     public int Price;
 
