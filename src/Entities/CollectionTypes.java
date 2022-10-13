@@ -5,7 +5,7 @@ import java.util.List;
 
 public class CollectionTypes {
 
-    public ArrayList<String> CollectionTypes = new ArrayList<>() {{
+    public ArrayList<String> MyCollectionTypes = new ArrayList<>() {{
         add("No type");
         add("Books");
         add("Games");
@@ -15,6 +15,6 @@ public class CollectionTypes {
     }};
 
     public int GetSize() {
-        return CollectionTypes.size();
+        return MyCollectionTypes.size();
     }
 }
