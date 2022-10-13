@@ -47,7 +47,7 @@ public class Program {
                         }
                         System.out.print("Your choice: ");
                         typeChoice = input.nextInt();
-                        System.out.println(collection_type.CollectionTypes.size());
+//                        System.out.println(collection_type.CollectionTypes.size());
 
                         if (typeChoice < 0 || typeChoice > collection_type.CollectionTypes.size()) {
                             System.out.println("Sorry, you chose the wrong type. Please try again");
