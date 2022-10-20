@@ -7,6 +7,7 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.util.ArrayList;
 
 public class DB implements IDB {
 
@@ -52,8 +53,17 @@ public class DB implements IDB {
         return instance;
     }
 
-    public void InsertData(String name, int price) {
-        String sql = "insert into collection (name, price) values ('" + name + "', " + price + ");";
+    public void InsertIntoBooksTable(String name, int price, ArrayList<String> features) {
+        String sql = "insert into collection (name, price) values ('" + name + "', " + price + ", '{";
+
+        for (String f : features) {
+            if (f == features.get(features.size())) {
+                sql += "'" + f + "'}'";
+                break;
+            }
+            sql += "'" + f + "', ";
+        }
+        sql += ");";
 
         try {
             int rows = statement.executeUpdate(sql);
