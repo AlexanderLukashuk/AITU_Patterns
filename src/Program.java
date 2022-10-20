@@ -1,3 +1,4 @@
+import Database.DB;
 import Entities.*;
 import Entities.Books.PsychologicalBook;
 import Entities.Books.RomanceBook;
@@ -18,8 +19,9 @@ import java.util.ArrayList;
 import java.util.Scanner;
 
 public class Program {
-
     public static void main(String[] args) {
+
+        DB db = DB.getInstance();
 
         Scanner input = new Scanner(System.in);
         int menu = -1;
@@ -846,6 +848,9 @@ public class Program {
 
 
 //        System.out.println(sportCar.getClass().getSimpleName());
+
+//        Animal a = Cat();
+//        Animal a = AnimalFactory.getAnimal("Кошка");
 
 
     }
