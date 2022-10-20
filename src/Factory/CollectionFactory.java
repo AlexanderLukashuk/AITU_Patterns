@@ -1,5 +1,6 @@
 package Factory;
 
+import Database.DB;
 import Entities.*;
 import Entities.Books.PsychologicalBook;
 import Entities.Books.RomanceBook;
@@ -13,11 +14,16 @@ import Entities.Cars.CarsFeatures.EngineCapacity;
 import Entities.Cars.LuxuryCar;
 import Entities.Cars.SportCar;
 
+import java.util.ArrayList;
 import java.util.Scanner;
 
 public class CollectionFactory {
 
     public static Item GetItem(String type, String name, int price) {
+
+        DB db = DB.getInstance();
+        db.GetStatement();
+
         Scanner input = new Scanner(System.in);
         switch (type) {
             case "Books":
@@ -67,10 +73,17 @@ public class CollectionFactory {
 //                                        LuxuryCar car = new LuxuryCar(new BasicCar(temp_item_name, temp_item_price));
 
                         int moreBookFeatures = 0;
+                        ArrayList<String> features = new ArrayList<>();
 
                         switch (bookFeatures) {
                             case 1:
                                 System.out.println("Psychological book sent");
+
+                                features.removeAll(features);
+                                features.add(" ");
+                                features.add(" ");
+                                features.add(" ");
+                                db.InsertIntoBooksTable(name, price, features);
                                 return new PsychologicalBook(name, price);
 //                                all_collections.get(all_collections.size() - 1).collection.add(psychologicalBook);
 //                                break;
@@ -88,12 +101,24 @@ public class CollectionFactory {
 //                                        LimitedCollectionBook tempLimitedCollectionBookd = new LimitedCollectionBook(additionalEditionBook);
 //                                        all_collections.get(all_collections.size() - 1).collection.add(tempLimitedCollectionBookd);
                                         System.out.println("Limited collection, additional edition psychological book sent");
+
+                                        features.removeAll(features);
+                                        features.add("Limited Collection");
+                                        features.add("Additional Edition");
+                                        features.add("");
+                                        db.InsertIntoBooksTable(name, price, features);
                                         return new LimitedCollectionBook(new AdditionalEditionBook(new PsychologicalBook(name, price)));
 //                                        break;
                                     case 2:
 //                                        SignatureBook tempSignatureBook = new SignatureBook(additionalEditionBook);
 //                                        all_collections.get(all_collections.size() - 1).collection.add(tempSignatureBook);
                                         System.out.println("Author signature additional edition psychological book sent");
+
+                                        features.removeAll(features);
+                                        features.add("Signature Author");
+                                        features.add("Additional Edition");
+                                        features.add("");
+                                        db.InsertIntoBooksTable(name, price, features);
                                         return new SignatureBook(new AdditionalEditionBook(new PsychologicalBook(name, price)));
 //                                        break;
                                     case 3:
@@ -101,10 +126,22 @@ public class CollectionFactory {
 //                                        SignatureBook tempSignatureBook2 = new SignatureBook(tempLimitedCollectionBook2);
 //                                        all_collections.get(all_collections.size() - 1).collection.add(tempSignatureBook2);
                                         System.out.println("Author signature limited collection additional edition psychological book sent");
+
+                                        features.removeAll(features);
+                                        features.add("Limited Collection");
+                                        features.add("Signature Author");
+                                        features.add("Additional Edition");
+                                        db.InsertIntoBooksTable(name, price, features);
                                         return new SignatureBook(new LimitedCollectionBook(new AdditionalEditionBook(new PsychologicalBook(name, price))));
 //                                        break;
                                     case 4:
 //                                        all_collections.get(all_collections.size() - 1).collection.add(additionalEditionBook);
+
+                                        features.removeAll(features);
+                                        features.add("Additional Edition");
+                                        features.add("");
+                                        features.add("");
+                                        db.InsertIntoBooksTable(name, price, features);
                                         return new AdditionalEditionBook(new PsychologicalBook(name, price));
 //                                        break;
                                 }
@@ -126,12 +163,24 @@ public class CollectionFactory {
 //                                        AdditionalEditionBook tempAdditionalEditionBook = new AdditionalEditionBook(limitedCollectionBook);
 //                                        all_collections.get(all_collections.size() - 1).collection.add(tempAdditionalEditionBook);
                                         System.out.println("Limited collection, additional edition psychological book sent");
+
+                                        features.removeAll(features);
+                                        features.add("Limited Collection");
+                                        features.add("Additional Edition");
+                                        features.add("");
+                                        db.InsertIntoBooksTable(name, price, features);
                                         return new AdditionalEditionBook(new LimitedCollectionBook(new PsychologicalBook(name, price)));
 //                                        break;
                                     case 2:
 //                                        SignatureBook tempSignatureBook = new SignatureBook(limitedCollectionBook);
 //                                        all_collections.get(all_collections.size() - 1).collection.add(tempSignatureBook);
                                         System.out.println("Author signature limited collection psychological book sent");
+
+                                        features.removeAll(features);
+                                        features.add("Limited Collection");
+                                        features.add("Signature Author");
+                                        features.add("");
+                                        db.InsertIntoBooksTable(name, price, features);
                                         return new SignatureBook(new LimitedCollectionBook(new PsychologicalBook(name, price)));
 //                                        break;
                                     case 3:
@@ -139,11 +188,22 @@ public class CollectionFactory {
 //                                        SignatureBook tempSignatureBook2 = new SignatureBook(tempAdditionalEditionBook2);
 //                                        all_collections.get(all_collections.size() - 1).collection.add(tempSignatureBook2);
                                         System.out.println("Author signature limited collection additional edition psychological book sent");
+
+                                        features.removeAll(features);
+                                        features.add("Limited Collection");
+                                        features.add("Additional Edition");
+                                        features.add("Signature Author");
+                                        db.InsertIntoBooksTable(name, price, features);
                                         return new SignatureBook(new AdditionalEditionBook(new LimitedCollectionBook(new PsychologicalBook(name, price))));
 //                                        break;
                                     case 4:
 //                                        all_collections.get(all_collections.size() - 1).collection.add(limitedCollectionBook);
                                         System.out.println("Limited collection psychological book sent");
+                                        features.removeAll(features);
+                                        features.add("Limited Collection");
+                                        features.add("");
+                                        features.add("");
+                                        db.InsertIntoBooksTable(name, price, features);
                                         return new LimitedCollectionBook(new PsychologicalBook(name, price));
 //                                        break;
                                 }
@@ -165,12 +225,24 @@ public class CollectionFactory {
 //                                        AdditionalEditionBook tempAdditionalEditionBook = new AdditionalEditionBook(signatureBook);
 //                                        all_collections.get(all_collections.size() - 1).collection.add(tempAdditionalEditionBook);
                                         System.out.println("Author signature addition edition psychological book sent");
+
+                                        features.removeAll(features);
+                                        features.add("Additional Edition");
+                                        features.add("Signature Author");
+                                        features.add("");
+                                        db.InsertIntoBooksTable(name, price, features);
                                         return new AdditionalEditionBook(new SignatureBook(new PsychologicalBook(name, price)));
 //                                        break;
                                     case 2:
 //                                        LimitedCollectionBook tempLimitedCollectionBook = new LimitedCollectionBook(signatureBook);
 //                                        all_collections.get(all_collections.size() - 1).collection.add(tempLimitedCollectionBook);
                                         System.out.println("Author signature limited collection psychological book sent");
+
+                                        features.removeAll(features);
+                                        features.add("Limited Collection");
+                                        features.add("Signature Author");
+                                        features.add("");
+                                        db.InsertIntoBooksTable(name, price, features);
                                         return new LimitedCollectionBook(new SignatureBook(new PsychologicalBook(name, price)));
 //                                        break;
                                     case 3:
@@ -178,11 +250,23 @@ public class CollectionFactory {
 //                                        LimitedCollectionBook tempLimitedCollectionBook2 = new LimitedCollectionBook(tempAdditionalEditionBook2);
 //                                        all_collections.get(all_collections.size() - 1).collection.add(tempLimitedCollectionBook2);
                                         System.out.println("Author signature addition edition limited collection psychological book sent");
+
+                                        features.removeAll(features);
+                                        features.add("Limited Collection");
+                                        features.add("Additional Edition");
+                                        features.add("");
+                                        db.InsertIntoBooksTable(name, price, features);
                                         return new LimitedCollectionBook(new AdditionalEditionBook(new SignatureBook(new PsychologicalBook(name, price))));
 //                                        break;
                                     case 4:
 //                                        all_collections.get(all_collections.size() - 1).collection.add(signatureBook);
                                         System.out.println("Author signature psychological book sent");
+
+                                        features.removeAll(features);
+                                        features.add("Signature Author");
+                                        features.add("");
+                                        features.add("");
+                                        db.InsertIntoBooksTable(name, price, features);
                                         return new SignatureBook(new PsychologicalBook(name, price));
 //                                        break;
                                 }
@@ -517,6 +601,7 @@ public class CollectionFactory {
 //                }
 
         }
+        db.close();
         return null;
     }
 }

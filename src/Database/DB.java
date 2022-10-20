@@ -54,14 +54,15 @@ public class DB implements IDB {
     }
 
     public void InsertIntoBooksTable(String name, int price, ArrayList<String> features) {
-        String sql = "insert into collection (name, price) values ('" + name + "', " + price + ", '{";
+        String sql = "insert into books (name, price, features) values ('" + name + "', " + price + ", '{";
+//        String sql = "insert into books (name, price) values ('" + name + "', " + price + ");";
 
         for (String f : features) {
-            if (f == features.get(features.size())) {
-                sql += "'" + f + "'}'";
+            if (f == features.get(features.size() - 1)) {
+                sql += "\"" + f + "\"}'";
                 break;
             }
-            sql += "'" + f + "', ";
+            sql += "\"" + f + "\", ";
         }
         sql += ");";
 

@@ -22,6 +22,7 @@ public class Program {
     public static void main(String[] args) {
 
         DB db = DB.getInstance();
+        db.GetStatement();
 
         Scanner input = new Scanner(System.in);
         int menu = -1;
@@ -762,6 +763,7 @@ public class Program {
 
             }
         }
+        db.close();
 //
 //
 //        Item warcraft = new Item();
