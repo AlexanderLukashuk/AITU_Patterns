@@ -802,7 +802,9 @@ public class Program {
                     String pass = input.nextLine();
 
                     for (User u : db.users) {
-                        if (u.)
+                        if (u.GetLogin() == login && u.GetPassword() == pass) {
+                            System.out.println("Welcome " + u.GetLogin());
+                        }
                     }
                 case 9:
 //                    Delivery delivery = new Delivery();

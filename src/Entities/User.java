@@ -9,11 +9,11 @@ public class User {
         Password = password;
     }
 
-    String GetLogin() {
+    public String GetLogin() {
         return Login;
     }
 
-    String GetPassword() {
+    public String GetPassword() {
         return Password;
     }
 }
