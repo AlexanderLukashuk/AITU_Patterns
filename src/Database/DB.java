@@ -1,6 +1,7 @@
 package Database;
 
 import Database.Interfaces.IDB;
+import Entities.User;
 
 import javax.swing.plaf.nimbus.State;
 import java.sql.*;
@@ -83,7 +84,9 @@ public class DB implements IDB {
                 String name = resultSet.getString(2);
                 String password = resultSet.getString(3);
 
+                User user = new User(name, password);
 
+                users.add(user);
             }
         } catch (SQLException e) {
             throw new RuntimeException(e);

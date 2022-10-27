@@ -800,6 +800,10 @@ public class Program {
                     String login = input.nextLine();
                     System.out.print("Enter password: ");
                     String pass = input.nextLine();
+
+                    for (User u : db.users) {
+                        if (u.)
+                    }
                 case 9:
 //                    Delivery delivery = new Delivery();
 //                    UI ui = new UI(delivery);
