@@ -3,16 +3,15 @@ package Database;
 import Database.Interfaces.IDB;
 
 import javax.swing.plaf.nimbus.State;
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.SQLException;
-import java.sql.Statement;
+import java.sql.*;
 import java.util.ArrayList;
 
 public class DB implements IDB {
 
     private static DB instance;
     private Connection conn;
+
+    public ArrayList<User> users = new ArrayList<User>();
 
     public Statement statement;
 
@@ -68,6 +67,24 @@ public class DB implements IDB {
 
         try {
             int rows = statement.executeUpdate(sql);
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+    }
+
+    public void GetUsers() {
+        String sql = "select * from users;";
+
+        try {
+            ResultSet resultSet = statement.executeQuery(sql);
+
+            while(resultSet.next()){
+
+                String name = resultSet.getString(2);
+                String password = resultSet.getString(3);
+
+
+            }
         } catch (SQLException e) {
             throw new RuntimeException(e);
         }

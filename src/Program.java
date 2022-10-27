@@ -796,6 +796,11 @@ public class Program {
                         log.post(message);
                     }
                 case 8:
+                    System.out.print("Enter Login: ");
+                    String login = input.nextLine();
+                    System.out.print("Enter password: ");
+                    String pass = input.nextLine();
+                case 9:
 //                    Delivery delivery = new Delivery();
 //                    UI ui = new UI(delivery);
 //                    ui.init();
