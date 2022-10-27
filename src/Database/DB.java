@@ -73,6 +73,15 @@ public class DB implements IDB {
         }
     }
 
+    public void InsertIntoUsersTable(String login, String password) {
+        String sql = "insert into users (login, password) values ('" + login + "', '" + password + "');";
+
+        try {
+            int rows = statement.executeUpdate(sql);
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+    }
 
     public void close() {
         try {

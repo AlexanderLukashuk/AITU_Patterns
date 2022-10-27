@@ -102,11 +102,12 @@ public class CollectionFactory {
 //                                        all_collections.get(all_collections.size() - 1).collection.add(tempLimitedCollectionBookd);
                                         System.out.println("Limited collection, additional edition psychological book sent");
 
+                                        LimitedCollectionBook l1 = new LimitedCollectionBook(new AdditionalEditionBook(new PsychologicalBook(name, price)));
                                         features.removeAll(features);
                                         features.add("Limited Collection");
                                         features.add("Additional Edition");
                                         features.add("");
-                                        db.InsertIntoBooksTable(name, price, features);
+                                        db.InsertIntoBooksTable(name, l1.Price, features);
                                         return new LimitedCollectionBook(new AdditionalEditionBook(new PsychologicalBook(name, price)));
 //                                        break;
                                     case 2:

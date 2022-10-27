@@ -14,12 +14,18 @@ import Entities.Cars.SportCar;
 import Factory.CollectionFactory;
 import Observer.Interfaces.IObserver;
 import Observer.MyCollectionSubsciber;
+import TamplatePattern.Google;
+import TamplatePattern.Log;
+import TamplatePattern.Twitter;
 
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
 import java.util.ArrayList;
 import java.util.Scanner;
 
 public class Program {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws IOException {
 
         DB db = DB.getInstance();
         db.GetStatement();
@@ -39,6 +45,8 @@ public class Program {
             System.out.println("3) Remove collection");
             System.out.println("4) Add item to collection");
             System.out.println("5) Show Collection");
+            System.out.println("6) Show collection list");
+            System.out.println("7) Login");
             System.out.println("0) Exit");
             menu = input.nextInt();
 
@@ -756,14 +764,50 @@ public class Program {
                     System.out.println(all_collections.size());
                     System.out.println(all_collections.get(0).collection.size());
                     break;
+                case 7:
+                    BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
+                    Log log = null;
+                    System.out.print("Input user name: ");
+                    String User = reader.readLine();
+                    System.out.print("Input password: ");
+                    String password = reader.readLine();
+                    System.out.print("Which collection to post: ");
+                    String message = reader.readLine();
+                    while (true) {
+                        System.out.println("Log in using: ");
+                        System.out.println("1) Google");
+                        System.out.println("2) Twitter");
+                        System.out.println("3) Exit");
+                        System.out.print("Your choice: ");
+//
+                        int choice = Integer.parseInt(reader.readLine());
+                        if (choice == 1) {
+                            log = new Google(User, password);
+
+                            db.InsertIntoUsersTable(log.User, log.password);
+                        } else if (choice == 2) {
+                            log = new Twitter(User, password);
+
+                            db.InsertIntoUsersTable(log.User, log.password);
+                        } else if (choice == 3) {
+                            System.out.println("Bye");
+                            break;
+                        }
+                        log.post(message);
+                    }
+                case 8:
+//                    Delivery delivery = new Delivery();
+//                    UI ui = new UI(delivery);
+//                    ui.init();
+                    break;
                 case 0:
                     System.out.println("Bye");
+                    db.close();
                     break;
 
 
             }
         }
-        db.close();
 //
 //
 //        Item warcraft = new Item();
