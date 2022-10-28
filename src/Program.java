@@ -795,17 +795,32 @@ public class Program {
                         }
                         log.post(message);
                     }
+                    break;
                 case 8:
+                    input.nextLine();
                     System.out.print("Enter Login: ");
                     String login = input.nextLine();
+//                    input.nextLine();
                     System.out.print("Enter password: ");
                     String pass = input.nextLine();
+                    db.GetUsers();
 
                     for (User u : db.users) {
-                        if (u.GetLogin() == login && u.GetPassword() == pass) {
+//                        System.out.println(u.GetLogin());
+//                        System.out.println(u.GetPassword());
+//                        System.out.println("Login = " + login);
+//                        int checkUser = login.compareTo(u.GetLogin());
+//                        System.out.println(u.GetLogin().equals(login));
+//                        System.out.println(u.GetLogin().getClass().getSimpleName());
+//                        System.out.println(login.getClass().getSimpleName());
+//                        String login1 = u.GetLogin();
+//                        System.out.println("checkUser = " + checkUser);
+//                        if (u.GetLogin() == login.toString()) {
+                        if (u.GetLogin().equals(login) && u.GetPassword().equals(pass)) {
                             System.out.println("Welcome " + u.GetLogin());
                         }
                     }
+                    break;
                 case 9:
 //                    Delivery delivery = new Delivery();
 //                    UI ui = new UI(delivery);
